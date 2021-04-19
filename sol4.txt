@@ -1,0 +1,127 @@
+ssh bandit0@bandit.labs.overthewire.org -p 2220
+entered username and password: bandit0
+ls
+cat readme
+this shows the pswd:boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+
+1
+ls
+cat ./-
+pswd:CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+
+2
+ls
+cat 'spaces in this filename'
+pswd:UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+
+3
+ls---no use
+cat inhere--- tells us its a directory
+du---no use
+cd inhere--- took us inside in here directory
+ls---no use
+find--- found a .hidden file
+cat .hidden---gave pswd
+pswd=
+pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
+4
+ls---inhere
+cd inhere---
+du---no use
+find---found some files
+file--- found password
+pswd=koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+
+5
+ls---inhere
+cd inhere---go inside
+find ./ -type f -size 1033c ! -executable
+cd maybehere07---inside
+see hidden file
+cat .file2---
+pswd=DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+
+6
+ls---no use
+ls -a --- some files appear
+cd /---we notice the ~sign and go back toh the Home directory.
+ls--- we see a lot of files and directories
+find ./ -user bandit7 -group bandit6 -size 33c---we put in the constraints
+we find a path which doesn't deny permission
+cd /var/lib/dpkg/info--- we follow it
+cat bandit7.password--- we read the file in question
+pswd=HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+
+7
+ls---data.txt
+cat data.txt--- lol, big mistake, tldr
+grep millionth data.text---since grep is used to locate a string, we get the password next to millionth
+pswd=cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+
+8
+ls---data.txt
+cat data.txt--- lots of data, ugh
+sort data.txt | uniq -u---sorting the data in data text and then finding unique solution with filter
+pswd=UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+
+9
+ls---data.txt
+cat data.txt--- lots of unreadable data is shown
+strings data.txt | grep -E "===="--- searching for a string which starts with ====
+pswd=truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+
+10
+ls---data.txt
+cat data.txt---weird string found
+it is mentioned that this is encrypted in base64. So to undo that we use decrypt command
+base64 -d data.txt
+pswd=IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+
+11
+ls---data.txt
+cat data.txt--- we know that this is encrypted in rot13, we take this data and use it in the following command like shown
+tr 'A-Za-z' 'N-ZA-Mn-za-m' <<<"Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh"--- we are shifting all the letters behing by 13 characters using this.
+this gives us the password
+pswd=5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+
+12
+mkdir /tmp/diya--- makes directory
+cp data.txt /txt/diya--- copies data.txt into directory
+cd /tmp/diya--- change directory
+xxd -r data.txt new--- decrypts file
+( ASCII file is our target, we continue this till we find it)
+mv solu solu.ext---rename
+(using tar -xvf,gz,bzip2 -d according to type of file)
+cat final
+P-8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+
+13
+ssh bandit14@localhost -i sshkey.private---we can login via ssh key which is stored in sshkey.private 
+
+
+14
+echo "4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e" | nc localhost 30000--- send key to port 30000 to get the next password
+pswd=BfMYroe26WYalil77FoDi9qh59eK5xNr
+
+15
+echo "BfMYroe26WYalil77FoDi9qh59eK5xNr" | openssl s_client -connect localhost:30001 -ign_eof--- we need too send the key in ssl format (using openssl command), we get
+pswd=cluFn7wTiGryunymYOu4RcffSxQluehd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

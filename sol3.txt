@@ -1,0 +1,129 @@
+git clone https://gitexercises.fracz.com/git/exercises.git
+cd exercises
+git config user.name "Your name here"
+git config user.email "Your e-mail here"
+./configure.sh
+
+git start
+1
+git start master
+
+2
+git start commit-one-file
+git status -s
+git add A.txt
+git status -s
+git commit -m "commit only one file"
+git verify
+
+git start next
+
+3
+git start commit-one-file-staged
+git status -s
+git rm--cached B.txt
+git commit -m "commit only one file"
+git verify
+
+git start next
+
+4
+git start ignore-them
+git status -s
+go into folder, and make a .gitignore document which has {*.jar, *.o *.exe, libraries/**} listed in new lines.
+git status -s
+gitt add .
+git commit -m "ignore them"
+git status -s
+git verify
+
+git start next
+
+5
+git start chase-branch
+git checkout escaped
+git branch -f chase-branch
+git checkout master
+git verify
+
+git start next
+
+6
+git start merge-conflict
+git merge another-piece-of-work
+gedit equation.txt
+remove the lines in the document and just leave 2 + 3 =5
+git add equation.txt
+git commit -m "merged conflict"
+
+git start next
+
+7
+git start save-your-work
+git status -s
+git stash
+now open the bug file and remove the bugged line and save it
+git add bug.txt
+git commit -m "bug"
+git stash pop
+open bug text and add the final line to it
+git commit -am "bug fixed"
+git verify
+
+git start next
+
+8
+git start change-branch-history
+git rebase hot-bugfix
+git verify
+
+git start next
+
+9
+git start remove-ignored
+git rm ignored.txt
+git commit -am "removed ignored.txt"
+git verify
+
+git start next
+
+10
+git start case-sensitive-filename
+git mv File file (didnt work as i didnt put extension)
+git mv File.txt file.txt (didnt work as I use windows and it apparently is case insensitive)
+git mv File.txt file2.txt
+git mv file2.txt file.txt
+git add .
+git commit -m "changed filename"
+git verify
+
+git start next
+
+(Here, my terminal started acting weird and kept throwing an error of having some work in progess and i was unable to start a new exercise so i logged out and signed in again with the same email but unfortunately the following exercises didn't show up in my progress. Hence ive attached screenshots of having solved them in gitbash.)
+
+11
+git start fix-typo
+git rebase -i
+git commit --amend
+git add .
+git commit --amend
+git rebase --continue
+
+git start next
+
+12
+git start forge-date
+git commit --amend --date "1987-01-5"
+git status
+git verify
+
+git start next
+
+13
+git start fix-old-typo
+
+
+
+
+
+
